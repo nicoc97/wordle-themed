@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Theme {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  category    String
+  difficulty  String   @default("medium")
+  createdAt   DateTime @default(now())
+  words       Word[]
+  
+  @@index([category])
+}
+
+model Word {
+  id       Int    @id @default(autoincrement())
+  word     String
+  length   Int
+  themeId  Int
+  theme    Theme  @relation(fields: [themeId], references: [id])
+  
+  @@index([themeId])
+  @@index([length])
+}
+
+model Dictionary {
+  id    Int    @id @default(autoincrement())
+  word  String @unique
+  
+  @@index([word])
+}
