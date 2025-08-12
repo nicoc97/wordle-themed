@@ -49,10 +49,10 @@ async function main() {
   // Fetch dictionary words from external source
   console.log('');
   const wordList = await getWordList({
-    source: 'WORDLE_ANSWERS', // Use official Wordle word list
+    source: 'COMMON_10K', // Use 10k common English words (varying lengths)
     minLength: 3,
     maxLength: 10,
-    maxWords: 20000, // Limit to prevent excessive data
+    maxWords: 10000, // Use all 10k words
     useCache: true // Use local cache to speed up repeated runs
   });
 

@@ -19,10 +19,10 @@ import { WordListOptions, WORD_SOURCES } from '../data/word-sources';
  */
 export async function getWordList(options: WordListOptions = {}): Promise<string[]> {
     const {
-        source = 'WORDLE_ANSWERS',
+        source = 'COMMON_10K',
         minLength = 3,
         maxLength = 12,
-        maxWords = 50000,
+        maxWords = 10000,
         useCache = true
     } = options;
 

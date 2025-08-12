@@ -22,7 +22,7 @@ export const WORD_SOURCES = {
 /**
  * Options for configuring word list fetching
  * 
- * @param source - Which word source to use (defaults to WORDLE_ANSWERS)
+ * @param source - Which word source to use (defaults to COMMON_10K)
  * @param minLength - Minimum word length to include (defaults to 3)
  * @param maxLength - Maximum word length to include (defaults to 12)
  * @param maxWords - Maximum number of words to return (defaults to 50000)
